@@ -1,0 +1,7 @@
+properties (id PK) --< folders (id PK, property_id FK, parent_folder_id FK self, depth, name)
+properties (id PK) --< property_users (property_id FK, user_id FK)
+users (id PK, role) --< property_users
+folders (id PK) --< files (id PK, folder_id FK)
+folders (id PK) --< permissions (id PK, user_id FK, access flags)
+users (id PK) --< permissions
+properties (id PK) --< audit_entries (id PK, action, actor_id FK -> users, folder_id FK, file_id FK)
